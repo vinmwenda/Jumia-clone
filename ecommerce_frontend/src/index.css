@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  box-sizing: border-box;
+}
+.navContainer {
+  background-color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  /*  width: box-shadow: 0px 0px 10px grey, 0px 0px 8px grey; */
+}
+
+.navInput {
+  display: flex;
+  flex: 1;
+
+  font-size: 1.2rem;
+  outline: none;
+
+  border: none !important;
+}
+.searchBorder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.inputBorder {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  flex: 1;
+  background-color: rgb(196, 192, 192);
+
+  padding: 2px;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+}
+.hover:hover {
+  color: white !important;
+  font-weight: 900;
+  cursor: pointer;
+}
+.topCont {
+  background-color: orange;
+}
+.topCont > img {
+  width: 100%;
+}
+.cardImage {
+  height: 16rem;
+  border: none !important;
+}
+.cardContainer {
+  border: none !important;
+}
+.topSellingItemsContainer {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px grey, 0px 0px 8px grey;
+}
+.bold {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
