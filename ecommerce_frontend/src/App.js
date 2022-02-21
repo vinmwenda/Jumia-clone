@@ -1,20 +1,27 @@
 import React from "react";
 import "./App.css";
-import Header from "./Components/Header/Header";
-//import Header from "./Components/Header";
-import Navbar from "./Components/Navbar/Navbar";
-import TopSellingItems from "./Components/Products/TopSellingItems";
-import TopSellingProducts from "./Components/Products/TopSellingProducts";
-// import SideBar from "./Components/SideBar";
-
+import HomeScreen from "./Components/Screens/HomeScreen";
+import {
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+import ProductDetails from "./Components/Screens/ProductDetails";
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  let params = useParams();
   return (
     <>
-      <Navbar />
-      <div style={{backgroundColor:'silver'}}>
-      <Header />
-      <TopSellingProducts />
-      </div>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route
+          path="/:p"
+          element={<ProductDetails router={{ location, navigate, params }} />}
+        />
+      </Routes>
     </>
   );
 }

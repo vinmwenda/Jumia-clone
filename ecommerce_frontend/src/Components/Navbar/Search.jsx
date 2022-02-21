@@ -11,7 +11,10 @@ const Search = () => {
           <input placeholder="Search product...." className="navInput" />
         </span>
         <span className="btnBorder m-1">
-          <Button variant="success" size="sm">
+          <Button
+            style={{ backgroundColor: "orange", border: "none" }}
+            size="md"
+          >
             SEARCH
           </Button>
         </span>

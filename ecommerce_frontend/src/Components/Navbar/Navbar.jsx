@@ -1,5 +1,5 @@
 import React from "react";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Search from "./Search";
 import gif from "../../static/images/top.gif";
+import jumiaIcon from "../../static/images/jumiaIcon.png";
 
 const Navbar = () => {
   const styles = {
@@ -27,58 +28,57 @@ const Navbar = () => {
           </Col>
         </Row>
       </Container>
-<div  className=" navContainer">
-      <Container   className="p-3 ">
-        <Row>
-          <Col lg={2} xs={12} className="hover">
-            JUMIA
-            <AddShoppingCartIcon style={{ margin: "0.5rem", color: "black" }} />
-          </Col>
-          <Col xs sm lg={6}>
-            <Search />
-          </Col>
-          <Col lg={4} xs={12}>
-            <Row>
-              <Col>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    variant="none"
-                    size="sm"
-                    id="dropdown-basic "
-                    style={styles}
-                  >
-                    <Icons Icon={AccountCircleOutlinedIcon} text="Account" />
-                  </Dropdown.Toggle>
+      <div className=" navContainer">
+        <Container className="p-3 ">
+          <Row>
+            <Col lg={2} xs={12} className="hover">
+              <img style={{ width: "9rem" }} src={jumiaIcon} alt="icon" />
+            </Col>
+            <Col xs sm lg={6}>
+              <Search />
+            </Col>
+            <Col lg={4} xs={12}>
+              <Row>
+                <Col>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="none"
+                      size="sm"
+                      id="dropdown-basic "
+                      style={styles}
+                    >
+                      <Icons Icon={AccountCircleOutlinedIcon} text="Account" />
+                    </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">hello</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
-              <Col>
-                <Dropdown>
-                  <Dropdown.Toggle
-                    variant="none"
-                    size="sm"
-                    id="dropdown-basic "
-                    style={styles}
-                  >
-                    <Icons Icon={HelpOutlineOutlinedIcon} text="Help" />
-                  </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">hello</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+                <Col>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="none"
+                      size="sm"
+                      id="dropdown-basic "
+                      style={styles}
+                    >
+                      <Icons Icon={HelpOutlineOutlinedIcon} text="Help" />
+                    </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">hello</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Col>
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">hello</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
 
-              <Col id="dropdown-basic " style={styles}>
-                <Icons Icon={ShoppingCartOutlinedIcon} text="Cart" />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+                <Col id="dropdown-basic " style={styles}>
+                  <Icons Icon={ShoppingCartOutlinedIcon} text="Cart" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </div>
 
       {/* < */}

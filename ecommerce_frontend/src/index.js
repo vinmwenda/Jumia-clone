@@ -3,13 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
-
+import configureAppStore from "./store/store";
+const store = configureAppStore();
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

@@ -9,22 +9,25 @@ function ControlledCarousel() {
   };
   const items = [
     {
-      image: require("../../static/images/image1.png"),
+      image: require("../../static/images/image1.jpg"),
     },
     {
-      image: require("../../static/images/image2.png"),
+      image: require("../../static/images/image2.jpg"),
     },
     {
-      image: require("../../static/images/image3.png"),
+      image: require("../../static/images/image3.jpg"),
     },
     {
-      image: require("../../static/images/image4.png"),
+      image: require("../../static/images/image4.jpg"),
     },
     {
-      image: require("../../static/images/image5.png"),
+      image: require("../../static/images/image5.jpg"),
     },
     {
-      image: require("../../static/images/image6.png"),
+      image: require("../../static/images/image6.jpg"),
+    },
+    {
+      image: require("../../static/images/image7.jpg"),
     },
   ];
 
@@ -32,7 +35,7 @@ function ControlledCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {items.map((item) => (
         <Carousel.Item key={item.image}>
-          <img className="d-block w-100" src={item.image} alt="First slide" />
+          <img className="d-block w-100" src={item.image} alt="" />
         </Carousel.Item>
       ))}
     </Carousel>
