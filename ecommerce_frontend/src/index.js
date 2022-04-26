@@ -6,14 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
-import configureAppStore from "./store/store";
-const store = configureAppStore();
+import configureStore from "./store/store";
+
+const store = configureStore();
+
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <App />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

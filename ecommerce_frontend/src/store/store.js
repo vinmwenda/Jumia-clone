@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./productsReducer";
-import api from "./apiMiddleware";
+import reducer from "./reducers";
+import { productsApi, locationApi } from "./apiMiddleware";
 
-export default function configureAppStore() {
+export default function store() {
   return configureStore({
     reducer,
-    middleware: [api],
+    middleware: [productsApi, locationApi],
   });
 }

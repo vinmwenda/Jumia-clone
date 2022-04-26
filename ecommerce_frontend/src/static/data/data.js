@@ -269,3 +269,42 @@ export let data = [
     },
   },
 ];
+
+export const formField = [
+  {
+    type: "name",
+    placeholder: "Enter your First name",
+    label: "First name",
+    name: "First_name",
+  },
+  {
+    type: "name",
+    placeholder: "Enter your Last name",
+    label: "Last name",
+    name: "Last_name",
+  },
+  {
+    type: "Username",
+    placeholder: "Enter  Username",
+    label: "Username",
+    name: "Username",
+  },
+  {
+    type: "email",
+    placeholder: "Enter email",
+    label: "Email address",
+    name: "Email_address",
+  },
+  {
+    type: "password",
+    placeholder: "Enter password",
+    label: "Password",
+    name: "Password",
+  },
+  {
+    type: "password",
+    placeholder: "Confirm your Password",
+    label: "Confirm Password",
+    name: "Confirm_Password",
+  },
+];

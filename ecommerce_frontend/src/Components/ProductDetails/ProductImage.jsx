@@ -1,9 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
-const ProductImage = () => {
-  const { image, title } = useSelector((state) => state.details);
-
+const ProductImage = ({ data }) => {
+  const { image, title } = data;
   return (
     <>
       <img

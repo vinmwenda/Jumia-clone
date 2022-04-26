@@ -13,12 +13,12 @@ import ControlledCarousel from "./ControlledCarousel";
 const Header = () => {
   return (
     <Container fluid="sm">
-      <Row style={{backgroundColor:"white"}}  className="m-2">
+      <Row style={{ backgroundColor: "white" }} className="m-2">
         <Col lg={2} xs={12} className="border m-1">
           <SideBar />
         </Col>
         <Col lg sm={12} className="m-1 border">
-         <ControlledCarousel/>
+          <ControlledCarousel />
         </Col>
         <Col lg={3} xs={12}>
           <Row className=" border m-1">

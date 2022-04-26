@@ -1,10 +1,11 @@
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
 import CardItem from "../Reusable/CardItem";
 import Button from "react-bootstrap/esm/Button";
 
-export default function ProductsContainer(category, products, back) {
+export default function ProductsContainer({ category, products, color }) {
   return (
     <Container fluid="sm">
       <div className="topSellingItemsContainer m-2">
@@ -14,7 +15,7 @@ export default function ProductsContainer(category, products, back) {
             padding: "15px",
             fontSize: "1.5rem",
             fontWeight: 600,
-            backgroundColor: `${back}`,
+            backgroundColor: `${color}`,
           }}
         >
           <Col>{category}</Col>
@@ -35,12 +36,13 @@ export default function ProductsContainer(category, products, back) {
           }}
         >
           {products.map((product) => (
-            <Col key={product.id}>
+            <Col key={product.price}>
               <CardItem
                 product={product}
                 image={product.image}
                 name={product.title}
                 price={product.price}
+                id={product._id}
               />
             </Col>
           ))}

@@ -1,8 +1,10 @@
 //const mongoose = require("mongoose");
 import mongoose from "mongoose";
-
+import { data } from "./dummy.js";
 mongoose
-  .connect("mongodb://127.0.0.1/jumia_clone")
+  .connect(
+    "mongodb+srv://jumia-cloe:kIi9BPTyIHgotXP6@jumia-clone.7ovll.mongodb.net/jumia-clone?retryWrites=true&w=majority"
+  )
   .then(() => console.log("connected to database"))
   .catch((err) => console.error("could not connect", err));
 
@@ -18,8 +20,28 @@ const productSchema = new mongoose.Schema({
     count: Number,
   },
 });
-const Product = mongoose.model("Product", productSchema);
-export default Product;
+
+const locationSchema = new mongoose.Schema({
+  name: String,
+  code: Number,
+  areaSQKm: Number,
+  capital: Array,
+});
+export const Product = mongoose.model("product", productSchema);
+export const County = mongoose.model("county", locationSchema);
+
+// data.map((item) => {
+//   async function createCounty() {
+//     const county = new County({
+//       name: item.name,
+//       code: item.code,
+//       areaSQKm: item.areaSQKm,
+//       capital: item.capital,
+//     });
+//     const result = await county.save();
+//   }
+//   createCounty();
+// });
 
 // data.map((item) => {
 //   async function createProduct() {
