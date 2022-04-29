@@ -24,5 +24,5 @@ app.get("/api/deliverylocations", async (req, res) => {
   res.send(await County.find());
 });
 
-// const port = process.env.port || 5000;
-app.listen(process.env.port, () => console.log("server running"));
+const port = process.env.port || 5000;
+app.listen(port, () => console.log("server running"));
