@@ -2,6 +2,8 @@ import express, { json } from "express";
 
 import { Product, County } from "./database.js";
 import cors from "cors";
+import helmet from "helmet";
+import compression from "compression";
 
 const corsOptions = {
   origin: "*",
@@ -13,7 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
-
+app.use(helmet());
+app.use(compression());
 app.get("/api/products", async (req, res) => {
   res.send(await Product.find());
 });
