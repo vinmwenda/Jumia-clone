@@ -1,5 +1,7 @@
 import axios from "axios";
 //get products
+const cloudURL = "https://jumiaclone.herokuapp.com";
+const localURl = "https://localhost:5000";
 export const productsApi =
   ({ dispatch }) =>
   (next) =>
@@ -10,7 +12,7 @@ export const productsApi =
     const { url, method, data, onSuccess, onError } = action.payload;
     try {
       const response = await axios.request({
-        baseURL: "http://localhost:5000",
+        baseURL: cloudURL,
         url,
         method,
         data,
@@ -30,9 +32,10 @@ export const locationApi =
     if (action.type !== "getLocation") return next(action);
     next(action);
     const { url, method, data, onSuccess, onError } = action.payload;
+
     try {
       const response = await axios.request({
-        baseURL: "http://localhost:5000",
+        baseURL: cloudURL,
         url,
         method,
         data,

@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
-app.use(helmet());
+// app.use(helmet());
 app.use(compression());
 app.get("/api/products", async (req, res) => {
   res.send(await Product.find());
@@ -24,5 +24,5 @@ app.get("/api/deliverylocations", async (req, res) => {
   res.send(await County.find());
 });
 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log("server running"));

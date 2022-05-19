@@ -1,10 +1,12 @@
 //const mongoose = require("mongoose");
 import mongoose from "mongoose";
 import { data } from "./dummy.js";
+let cloudUrl =
+  "mongodb+srv://jumia-cloe:kIi9BPTyIHgotXP6@jumia-clone.7ovll.mongodb.net/jumia-clone?retryWrites=true&w=majority";
+const localUrl =
+  "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false";
 mongoose
-  .connect(
-    "mongodb+srv://jumia-cloe:kIi9BPTyIHgotXP6@jumia-clone.7ovll.mongodb.net/jumia-clone?retryWrites=true&w=majority"
-  )
+  .connect(cloudUrl)
   .then(() => console.log("connected to database"))
   .catch((err) => console.error("could not connect", err));
 
