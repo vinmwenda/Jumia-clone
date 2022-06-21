@@ -22,13 +22,25 @@ const productSchema = new mongoose.Schema({
     count: Number,
   },
 });
-
+const cartSchema = new mongoose.Schema({
+  title: String,
+  price: Number,
+  description: String,
+  date: { type: Date, default: Date.now },
+  category: String,
+  image: String,
+  rating: {
+    rate: Number,
+    count: Number,
+  },
+});
 const locationSchema = new mongoose.Schema({
   name: String,
   code: Number,
   areaSQKm: Number,
   capital: Array,
 });
+export const Cart = mongoose.model("cart", cartSchema);
 export const Product = mongoose.model("product", productSchema);
 export const County = mongoose.model("county", locationSchema);
 
