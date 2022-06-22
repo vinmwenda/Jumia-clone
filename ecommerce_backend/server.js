@@ -1,6 +1,6 @@
 import express, { json } from "express";
 
-import { Product, County, Cart } from "./database.js";
+import { Product, County, Cart, User } from "./database.js";
 import cors from "cors";
 import helmet from "helmet";
 import compression from "compression";
@@ -26,6 +26,33 @@ app.get("/api/products", async (req, res) => {
 app.get("/api/deliverylocations", async (req, res) => {
   res.send(await County.find());
 });
+app.get("/api/users", async (req, res) => {
+  res.send(await User.find());
+});
+app.post("/api/users", async (req, res) => {
+  const {
+    First_name,
+    Last_name,
+    Username,
+    Email_address,
+    Password,
+    Confirm_Password,
+  } = req.body;
+  let user = new User({
+    First_name,
+    Last_name,
+    Username,
+    Email_address,
+    Password,
+    Confirm_Password,
+  });
+  try {
+    await user.save();
+    res.send(user);
+  } catch (error) {
+    console.log(error);
+  }
+});
 app.get("/api/cart", async (req, res) => {
   res.send(await Cart.find());
 });
@@ -46,7 +73,9 @@ app.post("/api/cart", async (req, res) => {
   try {
     await cart.save();
     res.send(cart);
-  } catch {}
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 const port = process.env.PORT || 5000;

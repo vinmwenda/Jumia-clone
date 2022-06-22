@@ -34,12 +34,22 @@ const cartSchema = new mongoose.Schema({
     count: Number,
   },
 });
+const userSchema = new mongoose.Schema({
+  First_name: String,
+  Last_name: String,
+  Username: String,
+  date: { type: Date, default: Date.now },
+  Email_address: String,
+  Password: Number,
+  Confirm_Password: Number,
+});
 const locationSchema = new mongoose.Schema({
   name: String,
   code: Number,
   areaSQKm: Number,
   capital: Array,
 });
+export const User = mongoose.model("user", userSchema);
 export const Cart = mongoose.model("cart", cartSchema);
 export const Product = mongoose.model("product", productSchema);
 export const County = mongoose.model("county", locationSchema);
